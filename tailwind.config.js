@@ -10,6 +10,7 @@ module.exports = {
         'accent-text': 'var(--accent)',
         'domain-text': 'var(--domain)',
         'directory-text': 'var(--directory)',
+        'danger-text': 'var(--danger)',
       },
     },
   },

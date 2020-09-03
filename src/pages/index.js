@@ -6,52 +6,66 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Inicio" />
     <div className="pl-2">
       <code>
         <span className="text-domain-text">crisgarlez@www</span>:<span className="text-directory-text">~</span>$ ls -l
         <br/>
         total 11344
         <br/>
-        {`drwxr-xr-x 1 crisgarlez crisgarlez  905 Oct 22 2013 `}
-        <Link
-          to="https://github.com/Crisstthian"
+        {`drwxr-xr-x 1 `}<span className="hidden md:inline">{` crisgarlez crisgarlez  `}</span>{`905 Oct 25 2016 `}
+        <a
+          href="https://github.com/crisgarlez"
+          target="_blank"
           className="text-accent-text"
         >
           github/
-        </Link>
+        </a>
         <br/>
-        {`drwxr-xr-x 1 crisgarlez crisgarlez  905 Oct 10 2013 `}
-        <Link
-          to="https://github.com/Crisstthian"
+        {`drwxr-xr-x 1 `}<span className="hidden md:inline">{` crisgarlez crisgarlez  `}</span>{`905 Aug 11 2019 `}
+        <a
+          href="https://www.twitch.tv/crisgarlez"
+          target="_blank"
+          className="text-accent-text"
+        >
+          twitch/
+        </a>
+        <br/>
+        {`drwxr-xr-x 1 `}<span className="hidden md:inline">{` crisgarlez crisgarlez  `}</span>{`905 Jul 20 2017 `}
+        <a
+          href="https://www.linkedin.com/in/crisgarlez/"
+          target="_blank"
           className="text-accent-text"
         >
           linkedin/
-        </Link>
+        </a>
         <br/>
-        {`drwxr-xr-x 1 crisgarlez crisgarlez  905 Oct 14 2013 `}
-        <Link
-          to="https://github.com/Crisstthian"
+        {`drwxr-xr-x 1 `}<span className="hidden md:inline">{` crisgarlez crisgarlez  `}</span>{`905 Oct 14 2018 `}
+        <a
+          href="https://twitter.com/crisgarlez"
+          target="_blank"
           className="text-accent-text"
         >
           twitter/
-        </Link>
+        </a>
         <br/>
-        {`drwxr-xr-x 1 crisgarlez crisgarlez  905 Sep 19 2016 `}
-        <Link
-          to="https://github.com/Crisstthian"
-          className="text-accent-text"
-        >
-          facebook/
-        </Link>
-        <br/>
-        {`drwxr-xr-x 1 crisgarlez crisgarlez  905 Apr 22 2016 `}
-        <Link
-          to="https://github.com/Crisstthian"
+        {`drwxr-xr-x 1 `}<span className="hidden md:inline">{` crisgarlez crisgarlez  `}</span>{`905 Apr 22 2018 `}
+        <a
+          href="https://www.instagram.com/crisgarlez/"
+          target="_blank"
           className="text-accent-text"
         >
           instagram/
-        </Link>
+        </a>
+        <br/>
+        {`drwxr-xr-x 1 `}<span className="hidden md:inline">{` crisgarlez crisgarlez  `}</span>{`905 Sep 19 2011 `}
+        <a
+          href="https://www.facebook.com/crisgarlez"
+          target="_blank"
+          className="text-accent-text"
+        >
+          facebook/
+        </a>
         <br/>
         <span className="text-domain-text">crisgarlez@www</span>:<span className="text-directory-text">~</span>$
       </code>

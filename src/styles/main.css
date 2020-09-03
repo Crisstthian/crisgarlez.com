@@ -10,6 +10,7 @@
   --accent: #F92672;
   --domain: #007ea7;
   --directory: #1649e0;
+  --danger: #F92672;
 }
 .theme-dark {
   --primary: #12181b;
@@ -19,4 +20,5 @@
   --accent: #AE81FF;
   --domain: #A6E22E;
   --directory: #66D9EF;
+  --danger: #F92672;
 }
