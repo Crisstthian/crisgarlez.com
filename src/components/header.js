@@ -1,39 +1,57 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useContext } from "react"
 
-const Header = ({ siteTitle }) => (
-  <header
-    className="bg-purple-700 mb-6"
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
+import { ThemeContext } from '../context/themeContext';
+
+import SunIcon from '../icons/sun.svg'
+import MoonIcon from '../icons/moon.svg'
+
+
+const Header = ({ siteTitle }) => {
+  const { theme, setTheme } = useContext(ThemeContext);
+
+  const toggleMode = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
+
+  return (
+    <header className="flex items-center justify-between py-4">
+      <div className="text-center w-full">
+        <h1>
+          <Link
+            to="/"
+          >
+            {siteTitle}
+          </Link>
+        </h1>
+      </div>
+      <div className="">
+        <button
+          onClick={toggleMode}
+          className="rounded-md focus:outline-none focus:shadow-outline-purple px-4"
         >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+          {theme === 'dark' ? (
+            <SunIcon className="w-5 h-5" aria-hidden="true" />
+          ) : (
+            <MoonIcon className="w-5 h-5" aria-hidden="true" />
+          )}
+        </button>
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: `crisgarlez@www:~`,
 }
 
 export default Header

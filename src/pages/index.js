@@ -2,20 +2,60 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div className="pl-2">
+      <code>
+        <span className="text-domain-text">crisgarlez@www</span>:<span className="text-directory-text">~</span>$ ls -l
+        <br/>
+        total 11344
+        <br/>
+        {`drwxr-xr-x 1 crisgarlez crisgarlez  905 Oct 22 2013 `}
+        <Link
+          to="https://github.com/Crisstthian"
+          className="text-accent-text"
+        >
+          github/
+        </Link>
+        <br/>
+        {`drwxr-xr-x 1 crisgarlez crisgarlez  905 Oct 10 2013 `}
+        <Link
+          to="https://github.com/Crisstthian"
+          className="text-accent-text"
+        >
+          linkedin/
+        </Link>
+        <br/>
+        {`drwxr-xr-x 1 crisgarlez crisgarlez  905 Oct 14 2013 `}
+        <Link
+          to="https://github.com/Crisstthian"
+          className="text-accent-text"
+        >
+          twitter/
+        </Link>
+        <br/>
+        {`drwxr-xr-x 1 crisgarlez crisgarlez  905 Sep 19 2016 `}
+        <Link
+          to="https://github.com/Crisstthian"
+          className="text-accent-text"
+        >
+          facebook/
+        </Link>
+        <br/>
+        {`drwxr-xr-x 1 crisgarlez crisgarlez  905 Apr 22 2016 `}
+        <Link
+          to="https://github.com/Crisstthian"
+          className="text-accent-text"
+        >
+          instagram/
+        </Link>
+        <br/>
+        <span className="text-domain-text">crisgarlez@www</span>:<span className="text-directory-text">~</span>$
+      </code>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
 )
 

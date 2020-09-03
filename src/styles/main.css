@@ -3,16 +3,20 @@
 @tailwind utilities;
 
 .theme-light {
-  --primary: #f8f8f8;
+  --primary: #E7EAEB;
   --secondary: #dbe1e8;
   --text-main: #0d0106;
   --text-secondary: #454e56;
-  --accent: #009ffd;
+  --accent: #F92672;
+  --domain: #007ea7;
+  --directory: #1649e0;
 }
 .theme-dark {
   --primary: #12181b;
   --secondary: #2a2e35;
   --text-main: #eaeaea;
   --text-secondary: #b8b8b9;
-  --accent: #fc7753;
+  --accent: #AE81FF;
+  --domain: #A6E22E;
+  --directory: #66D9EF;
 }

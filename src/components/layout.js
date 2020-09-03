@@ -7,45 +7,22 @@
 
 import React, { useContext } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import { ThemeContext } from '../context/themeContext';
 import Header from "./header"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
-  const { theme, setTheme } = useContext(ThemeContext);
-
-  const handleThemeToggle = () => {
-    if (theme === 'light') {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
-  };
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div
       className={`${
         theme === 'light' ? 'theme-light' : 'theme-dark'
-      } bg-primary text-main-text text-center transition-all duration-300 m-0 px-0 py-5 min-h-screen`}
+      } bg-primary text-main-text transition-all duration-300 m-0 p-0 min-h-screen`}
     >
-      <Header siteTitle={data.site.siteMetadata.title} />
       <div>
+        <Header/>
         <main>{children}</main>
-        <footer className="text-secondary-text">
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
     </div>
   )
