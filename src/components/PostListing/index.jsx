@@ -1,15 +1,18 @@
-import React, {useMemo} from "react";
-import PostItem from "../PostItem"
+import React, { useMemo } from "react";
+import PostItem from "../PostItem";
 
-const PostListing = ({data, showYears}) => {
+const PostListing = ({ data, showYears }) => {
   const postsByYear = {};
   data.forEach((post) => {
+    console.log("post", post);
     const year = post.date.split("-")[0];
 
     postsByYear[year] = [...(postsByYear[year] || []), post];
   });
 
-  const years = useMemo(() => Object.keys(postsByYear).reverse(), [postsByYear])
+  const years = useMemo(() => Object.keys(postsByYear).reverse(), [
+    postsByYear,
+  ]);
 
   if (showYears) {
     return years.map((year) => (
@@ -21,7 +24,7 @@ const PostListing = ({data, showYears}) => {
           ))}
         </div>
       </section>
-    ))
+    ));
   }
 
   return (
@@ -30,8 +33,7 @@ const PostListing = ({data, showYears}) => {
         <PostItem key={node.id} node={node} />
       ))}
     </div>
-  )
-
+  );
 };
 
 export default PostListing;
