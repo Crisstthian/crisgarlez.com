@@ -6,10 +6,9 @@ import { ThemeContext } from '../../context/themeContext';
 
 import SunIcon from '../../../static/icons/sun.svg'
 import MoonIcon from '../../../static/icons/moon.svg'
-import Logo from '../../../static/logos/logo.png'
 
 
-const Header = ({ siteTitle }) => {
+const ConsoleHeader = ({ siteTitle }) => {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const toggleMode = () => {
@@ -22,27 +21,22 @@ const Header = ({ siteTitle }) => {
 
   return (
     <nav className="flex flex-col items-center py-6">
-      <div className="w-8/12 container px-8">
+      <div className="w-full container px-4">
+
         <div className="flex justify-between">
-          <div className="flex items-start">
+          <div className="w-11/12 flex items-center justify-center">
             <Link
               to="/"
-              className="-ml-5 px-5 py-3 rounded mr-1 hover:bg-secondary"
+              className="py-3 rounded mr-1"
             >
-
-              <span className="flex">
-                <img className="w-6 mr-1" src={Logo} alt="Logo" />
-                <span>
-                  Cristhian García Vélez
-                </span>
-              </span>
+              {siteTitle}
             </Link>
           </div>
-          <div className="flex items-center">
+          <div className="w-1/12 flex items-center justify-end">
             <button
               type="button"
               onClick={toggleMode}
-              className="px-5 py-3 rounded focus:outline-none focus:shadow-outline-purple hover:bg-secondary -mr-5"
+              className="py-3 rounded focus:outline-none focus:shadow-outline-purple"
             >
               {theme === 'dark' ? (
                 <SunIcon className="w-5 h-5" aria-hidden="true" />
@@ -57,12 +51,12 @@ const Header = ({ siteTitle }) => {
   )
 }
 
-Header.propTypes = {
+ConsoleHeader.propTypes = {
   siteTitle: PropTypes.string,
 }
 
-Header.defaultProps = {
-  siteTitle: `Cristhian García`,
+ConsoleHeader.defaultProps = {
+  siteTitle: `crisgarlez@www:~`,
 }
 
-export default Header
+export default ConsoleHeader

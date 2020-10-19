@@ -1,21 +1,21 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { graphql, Link } from "gatsby";
-import Layout from "../layout"
+import ConsoleLayout from "../layout/ConsoleLayout"
 import SEO from "../components/SEO/SEO"
 import config from "../../data/SiteConfig"
 
 class Landing extends React.Component {
   render() {
     return (
-      <Layout>
+      <ConsoleLayout>
         <Helmet title={config.siteTitle} />
         <SEO />
-        <div className="pl-2">
+        <div className="">
           <code>
-            <span className="text-domain-text">crisgarlez@www</span>
+            <span className="text-user">crisgarlez@www</span>
             :
-            <span className="text-directory-text">~</span>
+            <span className="text-user-home">~</span>
             $ ls
             -l
             <br />
@@ -26,7 +26,7 @@ class Landing extends React.Component {
             {`905 Oct 18 2020 `}
             <Link
               to="/blog"
-              className="text-accent-text"
+              className="text-directory"
             >
               blog/
             </Link>
@@ -38,7 +38,7 @@ class Landing extends React.Component {
               href="https://github.com/crisgarlez"
               target="_blank"
               rel="noreferrer"
-              className="text-accent-text"
+              className="text-directory"
             >
               github/
             </a>
@@ -50,7 +50,7 @@ class Landing extends React.Component {
               href="https://www.twitch.tv/crisgarlez"
               target="_blank"
               rel="noreferrer"
-              className="text-accent-text"
+              className="text-directory"
             >
               twitch/
             </a>
@@ -62,7 +62,7 @@ class Landing extends React.Component {
               href="https://www.linkedin.com/in/crisgarlez/"
               target="_blank"
               rel="noreferrer"
-              className="text-accent-text"
+              className="text-directory"
             >
               linkedin/
             </a>
@@ -74,7 +74,7 @@ class Landing extends React.Component {
               href="https://twitter.com/crisgarlez"
               target="_blank"
               rel="noreferrer"
-              className="text-accent-text"
+              className="text-directory"
             >
               twitter/
             </a>
@@ -86,7 +86,7 @@ class Landing extends React.Component {
               href="https://www.instagram.com/crisgarlez/"
               target="_blank"
               rel="noreferrer"
-              className="text-accent-text"
+              className="text-directory"
             >
               instagram/
             </a>
@@ -98,18 +98,18 @@ class Landing extends React.Component {
               href="https://www.facebook.com/crisgarlez"
               target="_blank"
               rel="noreferrer"
-              className="text-accent-text"
+              className="text-directory"
             >
               facebook/
             </a>
             <br />
-            <span className="text-domain-text">crisgarlez@www</span>
+            <span className="text-user">crisgarlez@www</span>
             :
-            <span className="text-directory-text">~</span>
+            <span className="text-user-home">~</span>
             $
           </code>
         </div>
-      </Layout>
+      </ConsoleLayout>
     )
   }
 }

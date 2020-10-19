@@ -1,9 +1,10 @@
 ---
 title: "Big Test"
 cover: "5.jpg"
-category: "moar"
+categories: "moar"
 date: "2018-03-01"
 slug: "Big-Sample_Test"
+template: "post"
 tags:
     - test
     - huge

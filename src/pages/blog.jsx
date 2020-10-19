@@ -1,25 +1,36 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { graphql } from "gatsby"
-import Layout from "../layout"
-import PostListing from "../components/PostListing/PostListing"
+import React, {useMemo} from "react"
+import {Helmet} from "react-helmet"
+import {graphql} from "gatsby"
+import GeneralLayout from "../layout/GeneralLayout"
+import Search from "../components/Search"
 import SEO from "../components/SEO/SEO"
+
+import { getSimplifiedPosts } from '../utils/helpers'
 import config from "../../data/SiteConfig"
 
 
-class BlogPage extends React.Component {
-  render() {
-    const postEdges = this.props.data.allMarkdownRemark.edges
-    return (
-      <Layout>
-        <div className="about-container">
-          <Helmet title={`About | ${config.siteTitle}`} />
-          <SEO />
-          <PostListing postEdges={postEdges} />
+const BlogPage = ({ data, ...props }) => {
+
+  const posts = data.allMarkdownRemark.edges
+  const simplifiedPosts = useMemo(() => getSimplifiedPosts(posts), [posts])
+  return (
+    <GeneralLayout>
+      <Helmet title={`Blog | ${config.siteTitle}`} />
+      <SEO />
+      <header className="flex flex-col items-center pt-6 pb-4">
+        <div className="w-8/12 container px-8">
+          <h1 className="text-5xl font-bold py-4 text-primary">Artículos</h1>
+          <p className="text-2xl text-accent">Artículos, tutoriales y más</p>
         </div>
-      </Layout>
-    )
-  }
+      </header>
+      <section className="flex flex-col items-center py-6">
+        <div className="w-8/12 container px-8">
+          <Search posts={simplifiedPosts} {...props} />
+        </div>
+      </section>
+    </GeneralLayout>
+  )
+
 }
 
 export default BlogPage
@@ -41,6 +52,7 @@ export const pageQuery = graphql`
             tags
             cover
             date
+            categories
           }
         }
       }

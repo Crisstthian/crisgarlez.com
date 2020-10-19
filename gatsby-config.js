@@ -192,6 +192,43 @@ module.exports = {
           include: /icons/ // See below to configure properly
         }
       }
-    }
+    },
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'pages',
+        engine: 'flexsearch',
+        engineOptions: 'speed',
+        query: `
+          {
+            allMarkdownRemark(filter: { frontmatter: { template: { eq: "post" } } }) {
+              nodes {
+                id
+                frontmatter {
+                  title
+                  tags
+                  slug
+                  date(formatString: "MMMM DD, YYYY")
+                }
+                rawMarkdownBody
+              }
+            }
+          }
+        `,
+        ref: 'id',
+        index: ['title', 'tags'],
+        store: ['id', 'slug', 'title', 'tags', 'date'],
+        normalizer: ({ data }) =>
+          data.allMarkdownRemark.nodes.map((node) => ({
+            id: node.id,
+            slug: `/${node.frontmatter.slug}`,
+            title: node.frontmatter.title,
+            body: node.rawMarkdownBody,
+            tags: node.frontmatter.tags,
+            categories: node.frontmatter.categories,
+            date: node.frontmatter.date,
+          })),
+      },
+    },
   ]
 };
