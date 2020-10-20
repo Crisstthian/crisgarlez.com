@@ -1,9 +1,10 @@
 ---
-title: Hola mundo
-date: 2020-10-20T02:03:57.014Z
-cover: assets/sudobuilddev.png
-slug: hello-world
-category: test
+title: "Hola mundo"
+date: "2020-10-20"
+cover: "assets/sudobuilddev.png"
+slug: "hello-world"
+categories: "test"
+template: "post"
 tags:
   - prueba
 ---
