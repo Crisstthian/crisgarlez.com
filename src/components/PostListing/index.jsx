@@ -4,9 +4,7 @@ import PostItem from "../PostItem";
 const PostListing = ({ data, showYears }) => {
   const postsByYear = {};
   data.forEach((post) => {
-    console.log("post", post);
-    const year = post.date.split("-")[0];
-
+    const year = post.date.split(", ")[1];
     postsByYear[year] = [...(postsByYear[year] || []), post];
   });
 

@@ -12,9 +12,9 @@ class Landing extends React.Component {
       <ConsoleLayout>
         <Helmet title={config.siteTitle} />
         <SEO />
-        <section className="flex flex-col items-center py-6">
-          <div className="w-8/12 container px-8">
-            <div className="bg-secondary rounded px-8 pt-4 pb-8">
+        <section className="flex flex-col items-center md:py-6">
+          <div className="md:w-8/12 container md:px-8 px-1">
+            <div className="bg-secondary rounded px-1 md:px-8 pt-4 pb-8">
               <ConsoleHeader />
               <code>
                 <span className="text-user">crisgarlez@www</span>:

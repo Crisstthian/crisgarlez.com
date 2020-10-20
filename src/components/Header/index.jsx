@@ -20,8 +20,8 @@ const Header = ({ siteTitle }) => {
   };
 
   return (
-    <nav className="flex flex-col items-center py-6">
-      <div className="w-8/12 container px-8">
+    <nav className="flex flex-col items-center md:py-6">
+      <div className="md:w-8/12 container md:px-8 px-4">
         <div className="flex justify-between">
           <div className="flex items-start">
             <Link
@@ -30,7 +30,7 @@ const Header = ({ siteTitle }) => {
             >
               <span className="flex">
                 <img className="w-6 mr-1" src={Logo} alt="Logo" />
-                <span className="font-semibold text-lg">
+                <span className="font-semibold text-lg hidden md:block">
                   Cristhian García Vélez
                 </span>
               </span>

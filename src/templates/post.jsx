@@ -30,11 +30,11 @@ export default class PostTemplate extends React.Component {
             <title>{`${post.title} | ${config.siteTitle}`}</title>
           </Helmet>
           <SEO postPath={slug} postNode={postNode} postSEO />
-          <div className="w-8/12 container px-8">
+          <div className="md:w-8/12 container md:px-8">
             <article>
               <header>
                 <div>
-                  <div className="p-8">
+                  <div className="md:p-8 p-2">
                     <h1 className="text-5xl font-bold mb-4">{post.title}</h1>
                     <div className="">
                       <div className="mb-4">
@@ -61,7 +61,10 @@ export default class PostTemplate extends React.Component {
                   </div>
                 </div>
               </header>
-              <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+              <div
+                className="px-2"
+                dangerouslySetInnerHTML={{ __html: postNode.html }}
+              />
             </article>
           </div>
         </div>
